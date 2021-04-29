@@ -1,0 +1,13 @@
+.box-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.square-block{
+  border: solid 2px whitesmoke;
+  margin: 2.5%;
+  width: 12.5%;
+  height: 30px;
+}
