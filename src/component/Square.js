@@ -1,17 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-function Square(props) {
-    
+function Square(props) {   
     let boxStyle = {
         backgroundColor: "rgb("+props.box.r+","+props.box.g+","+props.box.b+")"
     }
-    useEffect(() => {
-        console.log(boxStyle.backgroundColor)
-    },[])
 
     return (
         <div className="square-block" style={boxStyle}>
-            
         </div>
     )
 }

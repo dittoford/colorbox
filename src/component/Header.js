@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header(props){
     return (
-        <div>
+        <div style={{marginLeft:"30px"}}>
              <input 
                 type="radio" 
                 name="shade"
@@ -16,7 +16,18 @@ function Header(props){
                 value="Darker"
                 checked={props.filter === "Darker"}
                 onChange={props.handleChange}
-            /> Darker
+            /> Darker <br></br>
+            <label>Favorite Color : </label>
+                <select 
+                    value={props.selectColor}
+                    onChange={props.handleChange}
+                    name="selectColor"
+                >   
+                    <option value="none">None</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
             <hr />
         </div>
     )
