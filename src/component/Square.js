@@ -6,8 +6,7 @@ function Square(props) {
     }
 
     return (
-        <div className="square-block" style={boxStyle}>
-        </div>
+        <div className="square-block" style={boxStyle}></div>
     )
 }
 

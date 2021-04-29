@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     let newBoxArray = sortBoxShade(boxes, filter)
-    newBoxArray = filterBoxColor(newBoxArray, color)
+        newBoxArray = filterBoxColor(newBoxArray, color)
 
     setColorBox(() => {
       return newBoxArray.map((item, index) => { return <Square key={index} box={item} /> })
@@ -42,6 +42,7 @@ function App() {
   return (
     <div>
       <Header handleChange={handleChange} filter={filter} selectColor={color} />
+      <hr />
       <div className="box-container">
         {colorBox}
       </div>
@@ -49,18 +50,21 @@ function App() {
   )
 }
 
+
 function filterBoxColor(boxes, color){
   let newBoxArray = []
   if(color === "red"){
-      newBoxArray = boxes.filter(box => box.r > box.g && box.r > box.b && (box.r/box.g) > 2 && (box.r/box.b) > 2)
+      newBoxArray = boxes.filter(box => box.r > box.g && box.r > box.b && (box.r/box.g) > 1.5 && (box.r/box.b) > 1.5)
   }
   else if(color === "green"){
-      newBoxArray = boxes.filter(box => box.g > box.r && box.g > box.b && (box.g/box.r) > 2 && (box.g/box.b) > 2)
+      newBoxArray = boxes.filter(box => box.g > box.r && box.g > box.b && (box.g/box.r) > 1.5 && (box.g/box.b) > 1.5)
   }
   else if(color === "blue"){
-      newBoxArray = boxes.filter(box => box.b > box.r && box.b > box.g && (box.b/box.r) > 2 && (box.b/box.g) > 2)
+      newBoxArray = boxes.filter(box => box.b > box.r && box.b > box.g && (box.b/box.r) > 1.5 && (box.b/box.g) > 1.5)
   }
-  else if(color === "none"){ newBoxArray = boxes }
+  else if(color === "none"){ 
+      newBoxArray = boxes 
+  }
 
   return newBoxArray
 }

@@ -28,7 +28,6 @@ function Header(props){
                     <option value="green">Green</option>
                     <option value="blue">Blue</option>
                 </select>
-            <hr />
         </div>
     )
 }
